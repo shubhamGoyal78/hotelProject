@@ -1,0 +1,225 @@
+/* Contact.css */
+
+:root {
+  --white: #fff;
+  --black: #111;
+  --accent-color: #8257E5;
+}
+
+.contact-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+  position: relative; /* This enables absolute positioning for children */
+  overflow: hidden; /* This ensures nothing goes outside the container bounds */
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/bg-contact.jpg') center/cover no-repeat;
+  z-index: -1; /* Send to the back */
+}
+
+.background-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the overlay opacity */
+  z-index: -1;
+}
+
+.header {
+  text-align: center;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  z-index: 1; /* Ensure header is above overlay */
+}
+
+.title {
+  font-size: 72px;
+  font-family: "Mrs Saint Delafield", cursive;
+}
+
+.second-title {
+  font-size: 42px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 3rem;
+  z-index: 1; /* Ensure section is above overlay */
+}
+.card {
+  display: flex;
+  background-color: #312B2499;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 638px;
+  margin: 0 1rem;
+}
+
+
+.big-card {
+  width: 1200px;
+}
+
+.contact-info {
+  padding: 20px;
+}
+.contact-info h3 {
+  font-size: 28px;
+    font-weight: 600;
+    line-height: 21.6px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14.5px;
+  padding-top: 19px;
+  line-height: 26.1px;
+  color: #ffffff; /* Default color for the text */
+}
+
+.contact-info p span {
+  color: #ca8e46; /* Apply the specific color to the text in the span */
+}
+
+.contact-info h4 {
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+}
+
+.map-location {
+  width: 25%;
+}
+
+.message-form {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr 2fr; /* Adjusting column sizes */
+  grid-gap: 20px;
+  margin-top: 20px;
+  
+}
+
+.message-form input,
+.message-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.message-form input {
+  width: 100%; /* Adjust as per requirement */
+}
+
+.message-form textarea {
+  grid-row: 1 / 4;
+  grid-column: 2; /* Span the textarea in the second column */
+}
+
+.message-form input[type="text"],
+.message-form input[type="email"],
+.message-form input[type="subject"] {
+  grid-column: 1; /* First column */
+  width: 100%;
+  height: 46px;
+  /* Add any other styles you might need */
+}
+
+.message-form input,
+.message-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc; /* You can adjust the border color as needed */
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: transparent; /* Make background transparent */
+  color: #ffffff; /* Set text color to white or any color that fits your design */
+}
+.message-form input::placeholder,
+.message-form textarea::placeholder {
+  color: #ccc; /* Lighter color for placeholders */
+}
+
+.message-form textarea {
+  grid-row: span 3;
+  height: 168px;
+}
+.btn {
+  background-color: transparent;
+  border: solid 2px #fff; /* White border */
+  letter-spacing: 3px;
+  line-height: 20px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  padding: 7px 20px;
+  line-height: 1em;
+  transition: all 0.5s;
+  border-radius: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.btn:hover {
+  background-position: right center; /* Change the background position on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#ca8e46;
+  border-radius: 0px;
+  z-index: -1;
+  transition: transform 1s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+}
+.error-message {
+  color: red;
+  margin-top: 10px;
+  display: block; /* This ensures the message appears below the submit button */
+}
+.success-message {
+  background-color: white;
+  color: green;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  z-index: 1; /* Ensure footer is above overlay */
+}

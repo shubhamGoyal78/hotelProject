@@ -1,0 +1,99 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* Apply to the body for a full-page background */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/bg-payment.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This will prevent the image from scrolling */
+}
+.payment-card {
+  width: 450px;
+  height: 1000px;
+
+  margin: auto; /* Center the card horizontally */
+  margin-top: 50px; /* Add some top margin for spacing */
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  overflow: hidden; /* Hide content overflow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-image {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.payment-image img {
+  
+  
+    max-height: 200px; /* Adjust the maximum height as needed */
+    width: 390px;
+    max-height: 228px;
+    object-fit: cover;
+}
+.pppage{
+    font-size: 32px;
+    color: #ca8e46;
+    margin-bottom: 15px;
+    
+}
+.backpay{
+    background-color: black;
+    color: white;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.confirmbk {
+    margin-left: 5px;
+    cursor: pointer;
+    margin-block-start: 12px;
+    border: 1px solid #727C74;
+    font-size: 25px;
+    margin-right: 4px;
+    color: white;
+    padding: 13px 0px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border .1s ease-in-out, color .1s ease-in-out;
+    font-size: 20px;
+    font-weight: 550;
+    line-height: inherit;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: #0c1f1e;
+    align-self: flex-start;
+    min-width: 90%;
+}
+
+
+.paragg{
+    margin-bottom: 20px;
+    color: black;
+    font-size: 20px;
+}
+.spangg{
+    color: #ca8e46; /* Apply the specific color to the text in the span */
+    font-family: 'Lato', sans-serif;
+}
+
+.payment-background::before {
+    content: '';
+    position: fixed; /* Change to fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1; /* Set behind the content */
+}
+
+.payment-content {
+    position: relative;
+    z-index: 2; 
+    padding:20px/* Ensures content is above the overlay */
+}

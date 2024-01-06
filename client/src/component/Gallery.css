@@ -1,0 +1,128 @@
+/* Gallery.css */
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+:root {
+    --white: #fff;
+    --black: #111;
+    --accent-color: #8257E5;
+}
+.header {
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+.title {
+    font-size: 72px;
+    color: #CA8E46;
+    font-family: 'Mrs Saint Delafield',cursive /* Ensure the font-family matches the Google Fonts */
+}
+
+.second-title {
+    font-size: 42px;
+    margin-top: -26px;
+    color: white;
+    letter-spacing: 5px;
+    font-family: 'Montserrat', sans-serif; /* Ensure the font-family matches the Google Fonts */
+}
+.header,.title,.second-title,.gallery{
+    position: relative;
+    z-index: 2; /* Ensures content is on top of the overlay */
+  }
+
+  .gallery-background {
+    position: relative;
+    background-image: url('../images/bg-gallery.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Black overlay with 50% opacity */
+    z-index: 1; /* Overlay on top of the background but behind the content */
+  }
+  
+  .gallery-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  } 
+  
+  
+  .header {
+      text-align: center;
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+  }
+  
+ 
+  
+
+.gallery-container {
+    min-height: 100vh;
+    color: var(--black);
+    padding: 2rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+
+    display: flex; /* Added for centering */
+    justify-content: center; /* Added for centering */
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-header h1, .gallery-header h2 {
+    background-color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns as per your requirement */
+    grid-auto-rows: minmax(100px, auto); /* Minimum height for rows */
+    gap: 1rem;
+}
+
+
+.gallery img {
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 400ms;
+    border-radius: 10px;
+}
+.gallery img.myImage1, .gallery img.myImage2, .gallery img.myImage4, .gallery img.myImage5, .gallery img.myImage7 {
+    grid-row-end: span 1; /* These images take up 1 row each */
+    height: 253px; /* Fixed height as per your size */
+}
+.gallery img.myImage3 {
+    grid-row-end: span 2; /* This image takes up 2 rows */
+    height: 529px; /* Fixed height */
+}
+.gallery img.myImage6 {
+    grid-column-end: span 2; /* This image spans 2 columns */
+    height: 256px; /* Fixed height */
+}
+
+
+.gallery img:hover {
+    opacity: 0.9;
+}
+
+/* ... (rest of your CSS) */

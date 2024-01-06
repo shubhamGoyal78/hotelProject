@@ -1,0 +1,192 @@
+/* Rooms.css */
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.rooms-page {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/bg-room.jpg') center center / cover no-repeat fixed;
+    z-index: 1; /* Under the content */
+}
+
+.background-overlay::before {
+    content: '';
+    position: absolute;
+    min-height: 100vh; /* Adjust this value if needed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Adjust the opacity as needed */
+    z-index: 2; /* Overlay above the background image */
+}
+
+.rooms-page > *:not(.background-overlay) {
+    position: relative;
+    z-index: 3;
+}
+
+.select-rooms-title {
+    text-align: center;
+    margin-top: 0; /* Adjust to bring the title closer to the image */
+    margin-bottom: 0;
+    color: #CA8E46;
+    padding-top: 51px;
+    -webkit-text-fill-color: #CA8E46;
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 0.75em;
+    letter-spacing: 0px;
+    margin: 0; /* Add this line to remove the default margin */
+}
+
+.title2 {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.1em;
+    letter-spacing: 5px;
+    margin-bottom: 0px;
+}
+
+.rooms-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    padding: 20px;
+}
+
+.room-card {
+    width: 590px;
+    height: 615px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.room-image {
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  position: relative;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.room-image .imageUrl {
+  opacity: 1;
+}
+
+.room-image .imageUrlHover {
+  opacity: 0;
+}
+
+.room-image:hover .imageUrl {
+  opacity: 0;
+}
+
+.room-image:hover .imageUrlHover {
+  opacity: 1;
+}
+
+.room-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  opacity: 0; /* Start with a fully transparent overlay */
+  transition: opacity 0.5s ease; /* Smooth transition for the overlay */
+}
+
+.room-image:hover::before {
+  opacity: 1; /* Fully visible overlay on hover */
+}
+
+.room-content {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    padding-top: 15px;
+    flex-direction: column;
+    justify-content: top;
+}
+.room-content h3 {
+  margin-bottom: 10px; /* Adjust as needed */
+  font-size: 25px;
+}
+
+.room-content p{
+  padding-top: 20px;
+}
+
+
+.room-content h2 {
+  color: white;
+  font-size: 25px;
+  padding-top: 10px;
+
+}
+.room-link, .book-now {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  background-color: #007bff; /* Primary color for buttons */
+  color: #fff;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; /* Keep the button size according to its content */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.room-link:hover, .book-now:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.book-now {
+  background-color: #28a745; /* Different color for Book Now */
+}
+
+.book-now:hover {
+  background-color: #218838; /* Darker green on hover */
+}

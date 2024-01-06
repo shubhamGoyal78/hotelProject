@@ -1,0 +1,37 @@
+/* Confirm.css */
+
+body {
+  background-color: white;
+}
+
+.confirm-page {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    height: 100vh;
+  background-color: white;
+  padding: 20px;
+}
+.animePar{
+    margin-left: 100px;
+}
+
+.confirm-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.booking-id {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.lottie-animation {
+  width: 300px;  /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  margin: 0 auto; /* Center the animation */
+}
+
+
+
