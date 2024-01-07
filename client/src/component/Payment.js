@@ -18,10 +18,22 @@ const Payment = () => {
   };
 
   const generateBookingId = () => {
-    const prefix = 'BK';
-    const uniquePart = Date.now().toString(36) + Math.random().toString(36).substring(2);
-    return `${prefix}-${uniquePart}`;
+    // Generate a string of random alphanumeric characters
+    let randomString = Math.random().toString(36).substring(2, 8);
+    
+    // Ensure the string is exactly 6 characters long
+    while (randomString.length < 6) {
+      randomString += Math.random().toString(36).substring(2, 8);
+    }
+  
+    // Use only the first 6 characters
+    randomString = randomString.substring(0, 6);
+  
+    return `${randomString.toUpperCase()}`;
   };
+  
+  console.log(generateBookingId());
+  
 
   useEffect(() => {
     setBookingData((currentBookingData) => {
@@ -54,10 +66,9 @@ const Payment = () => {
   
       if (data.success) {
         console.log('Booking confirmed successfully!');
-        navigate('/success');
+        navigate('/confirm', { state: { bookingId: bookingData.bookingId } });
       } else {
-        console.error('Error confirming booking:', data.message);
-        navigate('/successfull');
+        navigate('/confirm', { state: { bookingId: bookingData.bookingId } });
       }
     } catch (error) {
       // Log the error message if it exists, else log the entire error object
@@ -90,9 +101,7 @@ const Payment = () => {
       <div className="payment-content">
         <div>
           <h2 className='pppage'>{bookingData.selectedRoom}</h2>
-          {bookingData && bookingData.bookingId && (
-            <p className='paragg'><span className='spangg'>Booking ID:</span> {bookingData.bookingId}</p>
-          )}
+         
 
           <p className='paragg'><span className='spangg'>Start Date:</span> {bookingData.startDate.toDateString()}</p>
           <p className='paragg'><span className='spangg'>End Date:</span> {bookingData.endDate.toDateString()}</p>
