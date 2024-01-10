@@ -18,6 +18,7 @@
     font-family: 'Mrs Saint Delafield',cursive /* Ensure the font-family matches the Google Fonts */
 }
 
+
 .second-title {
     font-size: 42px;
     margin-top: -26px;
@@ -28,6 +29,12 @@
 .header,.title,.second-title,.gallery{
     position: relative;
     z-index: 2; /* Ensures content is on top of the overlay */
+  }
+  .gallery-background .navbar  a{
+    color: white;
+  }
+  .gallery-background .navbar  a:hover{
+    color: #CA8E46;
   }
 
   .gallery-background {
@@ -40,16 +47,7 @@
     width: 100%;
   }
   
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3); /* Black overlay with 50% opacity */
-    z-index: 1; /* Overlay on top of the background but behind the content */
-  }
-  
+ 
   .gallery-background::before {
     content: '';
     position: absolute;
@@ -57,7 +55,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: -1;
   } 
   

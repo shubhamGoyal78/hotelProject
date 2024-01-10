@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import RoomCard from './RoomCard'; // Import the RoomCard component
+import React from 'react'; // Import React
+import RoomCard from './RoomCard';
 import './Rooms.css';
 import room1 from '../images/room1.jpg'
 import room1o from '../images/room1o.jpg'
@@ -11,22 +11,23 @@ import room4 from '../images/room4.jpg'
 import room4o from '../images/room4o.jpg'
 import room5 from '../images/room5.jpg'
 import room5o from '../images/room5o.jpg'
-import room6 from '../images/room6.jpg'
 import room6o from '../images/room6o.jpg'
+import Navigation from './Navigation';
 
 const Rooms = () => {
-  const [showContent, setShowContent] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowContent(true);
-    }, 1500);
-  }, []);
+  
 
   return (
+
     <div className="rooms-page">
-    <div className="background-overlay"></div>
-      {showContent && (
+
+
+
+    <div className='room-navbar'>
+
+    <Navigation/>
+
         <>
           <h2 className="select-rooms-title">Select</h2>
           <h2 className="title2">Rooms</h2>
@@ -69,15 +70,14 @@ const Rooms = () => {
               title="Deluxe Room" 
               allow="4 Guests"
 
-              imageUrl={room6}
+              imageUrl={room5}
               imageUrlHover={room6o} 
               roomLink="/path/to/room1"
             />
-            {/* Add more RoomCard components for other rooms */}
           </div>
         </>
-      )}
-    </div>
+        </div>
+        </div> 
   );
 };
 

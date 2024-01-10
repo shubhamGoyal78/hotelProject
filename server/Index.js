@@ -9,31 +9,31 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/joker', {})
+mongoose.connect('mongodb://localhost:27017/shubham', {})
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error('Error connecting to MongoDB', err));
 
 // Define a schema for Payment
 const paymentSchema = new mongoose.Schema({
-  startDate: Date,
-  endDate: Date,
+  userName: String,
+  selectedRoom: String,
+ 
   adults: Number,
   children: Number,
-  selectedRoom: String,
   price: Number,
-  userName: String,
   userEmail: String,
   userPhone: String,
   userMessage: String,
-  // Add other payment-related fields as needed
+  bookingId : String,
+  startDate: Date,
+  endDate: Date,
 }, { collection: 'payments' });
 
 const Payment = mongoose.model('Payment', paymentSchema);
 
 // Create a new payment
 app.post('/api/payment', (req, res) => {
-  const paymentData = req.body; // Assuming your payment data is in the request body
-
+  const paymentData = req.body; 
   console.log('Received payment data:', paymentData);
   const newPayment = new Payment(paymentData);
   newPayment.save()

@@ -7,11 +7,15 @@ import myImage4 from '../images/myImage4.jpg'
 import myImage5 from '../images/myImage5.jpg'
 import myImage6 from '../images/myImage6.jpg'
 import myImage7 from '../images/myImage7.jpg'
+import Navigation from "./Navigation";
 
 const Gallery = () => {
   
   return (
-    <div className="gallery-background">
+
+    <div className="gallery-background">  
+    <Navigation />
+    
       <div className="overlay"></div> {/* Add this line */}
       <header className="header">
         <h1 className="title">Latest</h1>
@@ -29,7 +33,8 @@ const Gallery = () => {
 
         </div>
       </section>
-    </div>
+      </div>
+
   );
 };
 

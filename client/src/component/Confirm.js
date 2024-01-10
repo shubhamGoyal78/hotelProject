@@ -16,7 +16,6 @@ const Confirm = () => {
       loop: false,
       autoplay: true,
       animationData: animationData
-      // No need to set rendererSettings if the default works fine
     });
 
     return () => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import Map from './Map';
+import Navigation from './Navigation'
 
 const Contact = () => {
   const [success, setSuccess] = useState(false); // New state for success message
@@ -60,6 +61,9 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
+    <div className='special-div'>
+        <Navigation />
+
       <div className="background-overlay"></div>
 
       <header className="header">
@@ -119,6 +123,8 @@ const Contact = () => {
       <footer className="footer">
         <p>Connect with us on social media</p>
       </footer>
+        </div>
+
     </div>
   );
 };

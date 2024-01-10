@@ -1,13 +1,16 @@
 
+a {
+  text-decoration: no;
+}
+
+
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: none;
-  background-image: none;
+    background: transparent;
     padding: 10px 20px;
-    background-color: rgb(0, 0, 0) !important;
         z-index: 10; /* Higher than the video */
   }
   
@@ -22,9 +25,23 @@
   
   .navbar-links a {
     text-decoration: none;
-    color: red;
+    color: #161515;
     font-weight: bold;
-  }.navbar-booking button {
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 0 21px;
+  }
+
+  .navbar-links a:hover {
+    text-decoration: underline;
+    color: #CA8E46;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin: 0 21px;
+  }
+  
+  .navbar-booking button {
   position: relative;
   overflow: hidden;
   background-color: rgb(255, 165, 0);

@@ -1,7 +1,9 @@
 import React from 'react';
 import './Rooms.css'
+import { Link } from 'react-router-dom'; // Import Link
 
-const RoomCard = ({ title, allow, imageUrl, imageUrlHover, roomLink }) => {
+
+const RoomCard = ({ title, allow, imageUrl, imageUrlHover }) => {
   return (
     <div className="room-card">
       <div className="room-image">
@@ -19,8 +21,9 @@ const RoomCard = ({ title, allow, imageUrl, imageUrlHover, roomLink }) => {
       <div className="room-content">
         <h3>{title}</h3>
         <h2>{allow}</h2>
-        <button className='room-link' onClick={() => window.location.href=roomLink}>More Info</button>
-        <button className='book-now'>Book Now</button>
+        <Link to={`/booking`} className='book-now'>
+          Book Now
+        </Link>
       </div>
     </div>
   );

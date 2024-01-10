@@ -1,0 +1,62 @@
+.aboutus-container {
+    width: 100%;
+    min-height: 90vh;
+    background-size: contain; /* or set specific dimensions */
+    background-position: center center; /* Adjust as needed */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff;
+    text-align: center;
+  }
+  
+  .main-heading {
+    /* Your main heading styles */
+    color: #fff;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: CanelaThin, serif;
+    font-size: 56px;
+    font-weight: 100;
+    line-height: 62px;
+    margin: 0;
+    padding-top: 30vh; /* Adjust as needed */
+  }
+  
+  .content-section, .image-text-section, .text-image-section {
+    margin: 50px 0;
+    padding: 0 20px;
+  }
+  
+  .sub-heading, .text {
+    text-align: center;
+  }
+  
+  .c-appeared {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .c-appeared--done {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .image-text-section, .text-image-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .image-text-section img, .text-image-section img {
+    width: 45%;
+    margin: 15px;
+  }
+  
+  .text-image-section > div, .image-text-section > div {
+    width: 45%;
+    text-align: left;
+  }
+  
+  /* Additional styling as needed */
+  

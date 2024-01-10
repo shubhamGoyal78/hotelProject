@@ -6,7 +6,6 @@ import room2 from '../images/room2.jpg';
 import room3 from '../images/room3.jpg';  
 import room4 from '../images/room4.jpg';
 import room5 from '../images/room5.jpg';
-import room6 from '../images/room6.jpg';
 
 const Payment = () => {
   const navigate = useNavigate();
@@ -87,7 +86,7 @@ const Payment = () => {
     'Premier Room': room3,
     'Family Suite': room4,
     'Luxury Suite': room5,
-    'Presidential Suite': room6,
+    'Presidential Suite': room5,
   };
 
   return (

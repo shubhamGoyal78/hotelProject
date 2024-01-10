@@ -2,6 +2,7 @@
 
 body {
   background-color: white;
+  overflow: auto;
 }
 
 .confirm-page {

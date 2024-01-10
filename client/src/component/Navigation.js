@@ -13,16 +13,15 @@ const Navigation = () => {
 
       <div className="navbar-links">
         <Link to="/">Home</Link>
-        <Link to="/rooms">Rooms</Link>
-        <Link to="/booking">Booking</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/rooms">Booking</Link>
         <Link to="/gallery">Gallery</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/career">Career Page</Link>
       </div>
 
       <div className="navbar-booking">
-      <Link to="/rooms">
-        <button>Book Now</button>
+      <Link to="/signup">
+        <button className='btn btn-sm '>Login</button>
         </Link>
       </div>
     </nav>

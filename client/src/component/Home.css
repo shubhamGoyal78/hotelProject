@@ -3,6 +3,12 @@ body{overflow: hidden;}
     position: relative;
     height: 100vh; /* Full viewport height */
     width: 100%; /* Full width */
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden /* black with 30% opacity */
+    ;
+  }
+  .home-container .navbar-home a{
+    color: white;
   }
  
   
@@ -17,17 +23,11 @@ body{overflow: hidden;}
     min-height: 100%;
     z-index: -1;
 }
-  
-.home-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* black with 50% opacity */
-    z-index: 1; /* ensure it's above the background but below the content */
-}
+
+
+
+
+
 .centered-text {
     position: absolute;
     top: 50%;

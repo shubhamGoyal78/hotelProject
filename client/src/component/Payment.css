@@ -2,14 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 /* Apply to the body for a full-page background */
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url('../images/bg-payment.jpg'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* This will prevent the image from scrolling */
-}
+
 .payment-card {
   width: 450px;
   height: 1000px;
