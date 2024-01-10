@@ -13,7 +13,8 @@ import SuccessPage from ".//component/Confirm";
 import ErrorPage from ".//component/Confirm";
 import AboutUs from './/component/AboutUs'
 import "./App.css";
-
+import Login from "./component/Login";
+import Signup from './component/SignUps'
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -39,6 +40,9 @@ function App() {
             <Route exact path="/about" element={<AboutUs />} />
             <Route exact path="/payment" element={<Payment />} />
             <Route exact path="/confirm" element={<Confirm />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+
             <Route exact path="/successfull" element={<ErrorPage />} />
             <Route exact path="/success" element={<SuccessPage />} />
           </Routes>

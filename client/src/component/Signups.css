@@ -1,0 +1,97 @@
+/* Signups.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+.signup-container body{
+  color: #4CAF50;
+}
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  color: 
+  white;
+}
+.signup-input::placeholder {
+  color: var(--placeholder-color, grey); /* grey is the default if not set */
+}
+
+
+.signup-card {
+  background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 500px; /* Width updated */
+  height: 680px; /* Height updated */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Optional: adds shadow for better appearance */
+}
+
+
+.signup-logo-container {
+  background-color: white;
+  border-radius: 50%;
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Should be equal to width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Position it relative to the card */
+  top: 50px; /* Adjust this value to position the circle lower */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjusts for the width of the container */
+  /* Add more styling as needed */
+}
+.signup-logo {
+  width: 66px;
+    height: 67px;
+}
+
+.signup-heading {
+  margin-top: 150px; /* Adjust based on logo container size */
+  color: #fff;
+  margin-bottom: 35px;
+  font-family:'Poppins';
+}
+
+.signup-input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+  border-bottom: 2px solid white;
+  border-radius: 0 0 5px 5px;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  color: white; /* Set input text color to white */
+
+}
+
+
+.signup-button {
+  width: 120px; /* Button width */
+  height: 50px; /* Button height */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 25px; /* Rounded corners */
+  background-color: white; /* Green background */
+  color: black; /* Black text */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: relative; /* For positioning the pseudo-elements */
+  overflow: hidden; /* Ensures pseudo-elements don't overflow */
+  z-index: 1; /* Ensures the button is above pseudo-elements */
+  font-size: 16px; /* Adjust font size as needed */
+  display: inline-block; /* Allows setting specific width and height */
+  margin-top: 61px;
+}
+
+
+.signup-errorMessage {
+  color: white;
+}
