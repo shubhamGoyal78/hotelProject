@@ -1,46 +1,89 @@
 .aboutus-container {
     width: 100%;
-    min-height: 90vh;
-    background-size: contain; /* or set specific dimensions */
-    background-position: center center; /* Adjust as needed */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    color: #fff;
     text-align: center;
   }
+  .aboutus-container .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 10px 20px;
+    z-index: 10;
+    /* Rest of your styles */
+  }
+  .aboutus-container .navbar a{
+    color: white;
+  }
+  .aboutus-container .navbar a:hover{
+    color: #CA8E46;
+  }
+  
+  .background-section {
+    min-height: 95vh;
+    background-image: url('../images/bg-aboutus.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative; /* Updated */
+  }
+  
+  .background-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black with opacity, adjust as needed */
+    z-index: -1; /* Ensures the overlay is behind the content */
+  }
+  .sub-heading{
+    font-size: 64px;
+    margin-bottom: 55px;
+  }
+  
   
   .main-heading {
-    /* Your main heading styles */
-    color: #fff;
-    text-align: center;
-    letter-spacing: 2px;
-    font-family: CanelaThin, serif;
-    font-size: 56px;
-    font-weight: 100;
-    line-height: 62px;
-    margin: 0;
-    padding-top: 30vh; /* Adjust as needed */
+    margin-top: 30vh; /* Adjust as needed */
+    /* ... rest of your styles ... */
   }
   
-  .content-section, .image-text-section, .text-image-section {
+  /* Adjust the Navigation component styles as needed */
+  
+  
+
+  
+  /* Set black text color for sections following the background section */
+  .content-section, .image-text-section, .text-image-section, .sub-heading, .text {
+    color: #000; /* Black text */
     margin: 50px 0;
     padding: 0 20px;
   }
-  
-  .sub-heading, .text {
-    text-align: center;
+  .para-image{
+     width: 500px;
+     letter-spacing: .2px;
+     font-family: sans-serif;
+     font-size: 15px;
+     line-height: 24px;
   }
-  
-  .c-appeared {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
+  .para-mid{
+    width: 500px;
+     letter-spacing: .2px;
+     font-family: sans-serif;
+     font-size: 15px;
+     line-height: 24px;
+     margin-left: 157px;
   }
-  
-  .c-appeared--done {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
+  /* Styles for image-text and text-image sections */
   .image-text-section, .text-image-section {
     display: flex;
     align-items: center;
@@ -58,5 +101,8 @@
     text-align: left;
   }
   
-  /* Additional styling as needed */
+  /* Media queries */
+  @media (min-width: 768px) {
+    /* Your media query adjustments */
+  }
   
