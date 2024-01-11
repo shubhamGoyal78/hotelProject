@@ -11,6 +11,7 @@ import Payment from "./component/Payment";
 import Confirm from "./component/Confirm";
 import SuccessPage from ".//component/Confirm";
 import ErrorPage from ".//component/Confirm";
+import MyBooking from "./component/MyBooking";
 import AboutUs from './/component/AboutUs'
 import "./App.css";
 import Login from "./component/Login";
@@ -49,6 +50,8 @@ function App() {
 
             <Route exact path="/successfull" element={<ErrorPage />} />
             <Route exact path="/success" element={<SuccessPage />} />
+            <Route exact path="/my-booking" element={<MyBooking />} />
+
           </Routes>
         </>
       )}
