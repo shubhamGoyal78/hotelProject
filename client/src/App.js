@@ -14,6 +14,8 @@ import ErrorPage from ".//component/Confirm";
 import AboutUs from './/component/AboutUs'
 import "./App.css";
 import Login from "./component/Login";
+import { AuthProvider } from './AuthContext';
+
 import Signup from './component/SignUps'
 function App() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +28,8 @@ function App() {
   }, []);
 
   return (
+    <AuthProvider>
+
     <div className="App">
       {loading ? (
         <SplashScreen />
@@ -49,6 +53,8 @@ function App() {
         </>
       )}
     </div>
+  </AuthProvider>
+
   );
 }
 

@@ -10,6 +10,8 @@ import room3o from '../images/room3o.jpg'
 import room4 from '../images/room4.jpg'
 import room4o from '../images/room4o.jpg'
 import room5 from '../images/room5.jpg'
+import room6 from '../images/room6.jpg'
+
 import room5o from '../images/room5o.jpg'
 import room6o from '../images/room6o.jpg'
 import Navigation from './Navigation';
@@ -70,7 +72,7 @@ const Rooms = () => {
               title="Deluxe Room" 
               allow="4 Guests"
 
-              imageUrl={room5}
+              imageUrl={room6}
               imageUrlHover={room6o} 
               roomLink="/path/to/room1"
             />

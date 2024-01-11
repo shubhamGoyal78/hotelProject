@@ -10,6 +10,14 @@ a {
     padding: 10px 20px;
     z-index: 10; /* Higher than the video */
 }
+.navbar-booking {
+  display: flex;
+
+  padding-right: 54px;
+  align-items: center;
+  gap: 1px; /* Adjust the gap between buttons as needed */
+  min-width: 220px; /* Adjust this value as needed */
+}
 
 .navbar-logo img {
     height: 50px; /* Adjust size as needed */
@@ -38,28 +46,35 @@ a {
     margin: 0 21px;
 }
 
+
 .navbar-booking button {
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   background-color: rgb(255, 165, 0);
   color: white;
   font-weight: bold;
-  border: none;
+  margin-right: 5px;
+  border: 1px solid transparent; /* Adjust border as needed */
   border-radius: 10px;
+  line-height: 1; /* Adjust line height for text inside the button */
+  margin: 0 5px; /* Example: Ensure reasonable margins */
+  padding: 2px 6px; 
   cursor: pointer;
-  padding: 12px 19px;
-  font-size: 18px;
+  font-size: 0.8em;  /* Smaller font size */
+  min-height: 0; /* Remove minimum height if it's set */
+  min-width: 0; /* Remove minimum width if it's set */
 
   /* Other styles... */
 }
-
-.navbar-booking button:hover, .navbar-booking button:focus {
-  background-color: rgb(255, 165, 0) !important; /* Ensuring override */
-  /* Keep other styles or add additional styles if needed */
+.navbar-booking   .booking-my{
+    color: white;
+    background: none;
+    border-radius: none;
 }
+
 
 .btn-text {
   position: relative;
@@ -72,3 +87,5 @@ a {
   object-fit: cover; 
   margin-right: 6px;
 }
+
+

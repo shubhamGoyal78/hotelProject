@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost:27017/shubham', {})
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error('Error connecting to MongoDB', err));
 
-// Define a schema for Payment
+// Define schema for Payment
 const paymentSchema = new mongoose.Schema({
   userName: String,
   selectedRoom: String,
@@ -32,19 +32,62 @@ const paymentSchema = new mongoose.Schema({
 const Payment = mongoose.model('Payment', paymentSchema);
 
 // Create a new payment
-app.post('/api/payment', (req, res) => {
-  const paymentData = req.body; 
-  console.log('Received payment data:', paymentData);
-  const newPayment = new Payment(paymentData);
-  newPayment.save()
-    .then(item => {
-      console.log('Saved payment:', item);
-      res.status(200).json(item);
-    })
-    .catch(err => {
-      console.error('Error saving payment:', err);
-      res.json({ status: 'error', message: 'Unable to save payment data to the database' });
+app.post('/api/login', async (req, res) => {
+  try {
+    const { identifier, password } = req.body;
+    const user = await User.findOne({ 
+      $or: [{ email: identifier }, { mobileNumber: identifier }]
     });
+
+    if (user && user.password === password) {
+      res.json({ message: 'Login successful' });
+    } else {
+      res.status(400).json({ message: 'Invalid username or password' });
+    }
+  } catch (err) {
+    console.error('Error in login:', err);
+    res.status(500).json({ message: 'Error logging in' });
+  }
+});
+
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: { type: String, unique: true },
+  password: String,
+  mobileNumber: String,
+}, { collection: 'users' });
+
+const User = mongoose.model('User', userSchema);
+
+// Signup endpoint
+app.post('/api/signup', async (req, res) => {
+  try {
+    const { name, email, password, mobileNumber } = req.body;
+    const newUser = new User({ name, email, password, mobileNumber });
+    await newUser.save();
+    res.status(201).json({ message: 'User created successfully' });
+  } catch (err) {
+    console.error('Error in signup:', err);
+    res.status(500).json({ message: 'Error registering new user' });
+  }
+});
+
+// Login endpoint
+app.post('/api/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (user && user.password === password) {
+      // Implement token generation or session management as needed
+      res.json({ message: 'Login successful' });
+    } else {
+      res.status(400).json({ message: 'Invalid credentials' });
+    }
+  } catch (err) {
+    console.error('Error in login:', err);
+    res.status(500).json({ message: 'Error logging in' });
+  }
 });
 
 app.listen(port, () => {

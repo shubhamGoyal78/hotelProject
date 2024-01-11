@@ -1,13 +1,18 @@
-import React, { useState,useEffect} from 'react';
+import React, { useState,useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Signups.css';
-import signinlogo from '..//images/resort.png';
+import signinlogo from '../images/resort.png';
+import axios from 'axios';
 
 const Signups = () => {
+    const navigate = useNavigate();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+
 
 
     useEffect(() => {
@@ -17,11 +22,8 @@ const Signups = () => {
         });
     }, []);
 
-
-    const handleSignup = (e) => {
+    const handleSignup = async (e) => {
         e.preventDefault();
-
-        // Email validation
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if (!emailRegex.test(email)) {
             setErrorMessage('Invalid email format');
@@ -35,11 +37,22 @@ const Signups = () => {
             return;
         }
 
-        console.log('Signup with', name, email, password, mobileNumber);
-        setErrorMessage('');
-
-        // Here you would normally send a request to your server to handle the signup
+        try {
+            const response = await axios.post('http://localhost:5000/api/signup', {
+              name, email, password, mobileNumber
+            });
+            console.log(response.data.message);
+            setShowSuccessPopup(true);
+          } catch (error) {
+            console.error('Signup failed:', error);
+            setErrorMessage('Signup failed, please try again');
+          }
+        };
+    const handlePopupOk = () => {
+        setShowSuccessPopup(false);
+        navigate('/login');
     };
+    
 
     return (
         <div className="signup-container">
@@ -85,6 +98,12 @@ const Signups = () => {
                     {errorMessage && <p className="signup-errorMessage">{errorMessage}</p>}
                 </form>
             </div>
+            {showSuccessPopup && (
+        <div className="success-popup">
+            <p>You are successfully signed up!</p>
+            <button onClick={handlePopupOk}>OK</button>
+        </div>
+    )}
         </div>
     );
 };
