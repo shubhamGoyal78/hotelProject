@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import Map from './Map';
-import Navigation from './Navigation'
+import Navigation from './Navigation';
 
 const Contact = () => {
-  const [success, setSuccess] = useState(false); // New state for success message
+  const [success, setSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     message: '',
     email: '',
     phone: '',
   });
-
   const [errorMessages, setErrorMessages] = useState({
     email: '',
     phone: '',
   });
-  
-
 
   const handleChange = (e) => {
     setFormData({
@@ -36,9 +33,8 @@ const Contact = () => {
     return phoneRegex.test(phone);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const isEmailValid = validateEmail(formData.email);
     const isPhoneValid = validatePhone(formData.phone);
 
@@ -48,17 +44,26 @@ const Contact = () => {
     });
 
     if (isEmailValid && isPhoneValid) {
-      console.log('Form submitted successfully');
-      setSuccess(true);
+      try {
+        const response = await fetch('http://localhost:5000/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
 
-
-      setTimeout(() => {
-        setSuccess(false);
-      }, 2000);
-      // Add additional logic here for successful form submission
+        if (response.ok) {
+          setSuccess(true);
+          setTimeout(() => setSuccess(false), 2000);
+          // Reset form or additional logic
+        } else {
+          // Handle server errors
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
     }
   };
-
+  
   return (
     <div className="contact-container">
     <div className='special-div'>

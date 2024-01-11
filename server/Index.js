@@ -90,6 +90,25 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+// Contact form schema
+const contactFormSchema = new mongoose.Schema({
+  name: String,
+  message: String,
+  email: String,
+  phone: String,
+}, { collection: 'contactForms' });
+
+const ContactForm = mongoose.model('ContactForm', contactFormSchema);
+app.post('/api/contact', async (req, res) => {
+  try {
+    const newContactForm = new ContactForm(req.body);
+    await newContactForm.save();
+    res.status(201).json({ message: 'Form submitted successfully' });
+  } catch (err) {
+    console.error('Error in form submission:', err);
+    res.status(500).json({ message: 'Error submitting form' });
+  }
+});
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
