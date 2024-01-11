@@ -3,17 +3,39 @@
 .MyBooking-container {
     padding: 20px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative; /* Added relative positioning */
+    flex-direction: row; /* Change to row */
+    flex-wrap: wrap; /* Allow cards to wrap */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: flex-start; /* Align items from the start of the cross axis */
+    position: relative;
+}
+.MyBooking-container .gg-booking{
+    padding-top: 16px;
+}
+.MyBooking-container .gg-book{
+    background-color: rgb(255, 165, 0);
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
+.MyBooking-header {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 50px; /* Space between header and cards */
+}
+
+
 .MyBooking-back-button {
-    background-color: #007bff;
+    background-color: rgb(255, 165, 0);;
     color: white;
     border: none;
     padding: 10px 20px;
     text-align: center;
+    font-weight: bold;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;

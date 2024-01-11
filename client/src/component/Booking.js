@@ -32,11 +32,11 @@ const Booking = () => {
   const getPrice = (roomType, numberOfDays) => {
     const basePricePerDay = {
       "Standard Room": 2000,
-      "Deluxe Room": 3000,
-      "Premier Room": 4000,
-      "Family Suite": 5000,
-      "Luxury Suite": 8000,
-      "Presidential Suite": 10000,
+      "Deluxe Room": 5000,
+      "Premier Room": 10000,
+      "Family Suite": 15000,
+      "Luxury Suite": 20000,
+      "Presidential Suite": 25000,
     };
     const basePrice = basePricePerDay[roomType] || 0;
     const totalPrice = basePrice * numberOfDays;
@@ -313,19 +313,19 @@ const Booking = () => {
                 {padOptionText("Standard Room", 40)}₹2000
               </option>
               <option value="Deluxe Room">
-                {padOptionText("Deluxe Room", 40)}₹3000
+                {padOptionText("Deluxe Room", 40)}₹5000
               </option>
               <option value="Premier Room">
-                {padOptionText("Premier Room", 40)}₹4000
+                {padOptionText("Premier Room", 40)}₹10000
               </option>
               <option value="Family Suite">
-                {padOptionText("Family Suite", 40)}₹5000
+                {padOptionText("Family Suite", 40)}₹15000
               </option>
               <option value="Luxury Suite">
-                {padOptionText("Luxury Suite", 40)}₹8000
+                {padOptionText("Luxury Suite", 40)}₹20000
               </option>
               <option value="Presidential Suite">
-                {padOptionText("Presidential Suite", 40)}₹10000
+                {padOptionText("Presidential Suite", 40)}₹25000
               </option>
             </select>
           </div>

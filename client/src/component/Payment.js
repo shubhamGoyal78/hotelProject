@@ -12,9 +12,7 @@ const Payment = () => {
   const location = useLocation();
   const [bookingData, setBookingData] = useState(location.state?.bookingData);
 
-  const handleBack = () => {
-    navigate('/confirm'); // Replace '/confirm' with the path to your Confirm page
-  };
+  
 
   const generateBookingId = () => {
     // Generate a string of random alphanumeric characters
@@ -113,9 +111,7 @@ const Payment = () => {
           <button className="confirmbk" onClick={handleConfirmBooking}>
             Confirm Booking
           </button>
-          <button className="backpay" onClick={handleBack}>
-            Back
-          </button>
+          
         </div>
       </div>
     </div>

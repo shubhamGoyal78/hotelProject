@@ -148,8 +148,12 @@
   font-size: 25px;
 }
 
-.room-content p{
-  padding-top: 20px;
+.room-content p {
+    padding-top: 8px;
+    padding-bottom: 23px;
+    font-family: sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 
@@ -159,7 +163,7 @@
   padding-top: 10px;
 
 }
-.room-link, .book-now {
+.room-link{
   padding: 10px 20px;
   margin: 10px 5px;
   border-radius: 5px;
@@ -173,14 +177,39 @@
   transition: background-color 0.3s ease;
 }
 
-.room-link:hover, .book-now:hover {
+.room-link:hover{
   background-color: #0056b3; /* Darker shade on hover */
 }
+/* Other styles in Rooms.css */
 
 .book-now {
-  background-color: #28a745; /* Different color for Book Now */
+  background-color: orange; /* Original color */
+  color: white;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 6px 18px;
+  cursor: pointer;
+  text-align: center;
+  outline: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
 }
 
-.book-now:hover {
-  background-color: #218838; /* Darker green on hover */
+.book-now::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Light black overlay */
+  transition: left 1s ease;
+}
+
+.book-now:hover::before {
+  left: 0;
 }

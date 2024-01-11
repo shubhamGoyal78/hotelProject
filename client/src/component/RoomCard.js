@@ -3,7 +3,7 @@ import './Rooms.css'
 import { Link } from 'react-router-dom'; // Import Link
 
 
-const RoomCard = ({ title, allow, imageUrl, imageUrlHover }) => {
+const RoomCard = ({ title,info,price, imageUrl, imageUrlHover }) => {
   return (
     <div className="room-card">
       <div className="room-image">
@@ -20,7 +20,8 @@ const RoomCard = ({ title, allow, imageUrl, imageUrlHover }) => {
       </div>
       <div className="room-content">
         <h3>{title}</h3>
-        <h2>{allow}</h2>
+        <h3>{price}</h3>
+        <p>{info}</p>
         <Link to={`/booking`} className='book-now'>
           Book Now
         </Link>
