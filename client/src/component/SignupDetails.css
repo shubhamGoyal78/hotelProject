@@ -1,0 +1,28 @@
+.signup-details-table {
+    width: 100%; /* Full-width table */
+    border-collapse: collapse;
+  }
+  
+  .signup-details-table, .signup-details-table th, .signup-details-table td {
+    border: 1px solid black; /* Add borders to the table */
+    padding: 8px; /* Add some padding */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .signup-details-table th {
+    background-color: #ff8b00;
+    font-size: 33px;
+    color: white;
+    font-family: sans-serif;
+}   
+.signup-details-table td {
+    border: 1px solid black;
+    padding: 8px;
+    font-size: 20px;
+    background-color: beige;
+    text-align: left;
+    font-weight: bold;
+}
+  
+  /* Add more styling as needed */
+  

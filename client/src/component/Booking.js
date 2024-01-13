@@ -31,12 +31,12 @@ const Booking = () => {
   });
   const getPrice = (roomType, numberOfDays) => {
     const basePricePerDay = {
-      "Standard Room": 2000,
-      "Deluxe Room": 5000,
-      "Premier Room": 10000,
-      "Family Suite": 15000,
-      "Luxury Suite": 20000,
-      "Presidential Suite": 25000,
+      "Standard Room": 200000,
+      "Deluxe Room": 500000,
+      "Premier Room": 1000000,
+      "Family Suite": 1500000,
+      "Luxury Suite": 2000000,
+      "Presidential Suite": 2500000,
     };
     const basePrice = basePricePerDay[roomType] || 0;
     const totalPrice = basePrice * numberOfDays;

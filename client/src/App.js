@@ -16,8 +16,9 @@ import AboutUs from './/component/AboutUs'
 import "./App.css";
 import Login from "./component/Login";
 import { AuthProvider } from './AuthContext';
-
+import AdminPage from './component/AdminPage';
 import Signup from './component/SignUps'
+import AdminLogin from "./component/AdminLogin";
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -47,6 +48,8 @@ function App() {
             <Route exact path="/confirm" element={<Confirm />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/admin" element={<AdminLogin />} />
+            <Route exact path="/admindashboard" element={<AdminPage />} />
 
             <Route exact path="/successfull" element={<ErrorPage />} />
             <Route exact path="/success" element={<SuccessPage />} />

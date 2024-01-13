@@ -1,0 +1,39 @@
+.admin-login-container {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: auto;
+    margin-top: 50px;
+  }
+  
+  .admin-login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .admin-login-container label {
+    margin-bottom: 8px;
+  }
+  
+  .admin-input {
+    padding: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .admin-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .admin-button:hover {
+    background-color: #45a049;
+  }
+  
+  .admin-error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

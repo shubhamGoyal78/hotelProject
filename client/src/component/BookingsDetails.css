@@ -1,0 +1,28 @@
+.Booking-details-table {
+    width: 100%; /* Full-width table */
+    border-collapse: collapse;
+  }
+  
+  .Booking-details-table, .Booking-details-table th, .Booking-details-table td {
+    border: 1px solid black; /* Add borders to the table */
+    padding: 8px; /* Add some padding */
+    text-align: left; /* Align text to the left */
+  }
+  
+  .Booking-details-table th {
+    background-color: #ff8b00;
+    font-size: 33px;
+    color: white;
+    font-family: sans-serif;
+}   
+.Booking-details-table td {
+    border: 1px solid black;
+    padding: 12px;
+    font-size: 17px;
+    background-color: beige;
+    text-align: left;
+    font-weight: bold;
+}
+  
+  
+  
