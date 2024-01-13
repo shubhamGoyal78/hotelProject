@@ -1,82 +1,41 @@
-/* MyBooking.css */
-
-.MyBooking-container {
-    padding: 20px;
-    display: flex;
-    flex-direction: row; /* Change to row */
-    flex-wrap: wrap; /* Allow cards to wrap */
-    justify-content: center; /* Center the cards horizontally */
-    align-items: flex-start; /* Align items from the start of the cross axis */
-    position: relative;
-}
-.MyBooking-container .gg-booking{
-    padding-top: 16px;
-}
-.MyBooking-container .gg-book{
-    background-color: rgb(255, 165, 0);
-    padding: 10px;
-    color: white;
-    font-family: sans-serif;
-    font-weight: bold;
-}
-
-.MyBooking-header {
-    width: 100%;
-    text-align: center;
-    position: relative;
-    margin-top: 2px;
-    margin-bottom: 50px; /* Space between header and cards */
-}
-
-
-.MyBooking-back-button {
-    background-color: rgb(255, 165, 0);;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    position: absolute; /* Absolute positioning */
-    top: 10px; /* Adjusted to position at top */
-    left: 10px; /* Adjusted to position at left */
-    width: 100px; /* Increased width */
-}
-
 .MyBooking-card {
-    width: 300px;
-    border: 1px solid #ccc;
-    margin: 10px;
-    height: 300px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.MyBooking-card-image {
-    width: auto; /* Auto width to maintain aspect ratio */
-    padding-top: 10px;
-    height: auto; /* Auto height to maintain aspect ratio */
-    object-fit: cover; /* Cover the area without stretching */
-    max-width: 80%; /* Maximum width as a percentage of the card's width */
-    max-height: 120px; /* Limit the maximum height */
-}
-
-.MyBooking-card-content {
-    padding: 10px;
-    width: 100%; /* Ensures content takes full width */
-}
-
-.MyBooking-card-content h3 {
-    margin: 10px 0 5px 0;
-}
-
-.MyBooking-card-content p {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 15px;
+    background-color: #fff;
+    max-width: 500px;
+  }
+  
+  .MyBooking-card-image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .MyBooking-card-content {
+    padding: 15px;
+  }
+  
+  .MyBooking-card-content h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .MyBooking-card-content p {
+    color: #666;
+    line-height: 1.6;
     margin: 5px 0;
-}
+  }
+  
+  .gg-book {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 0 0 8px 8px;
+  }
+  

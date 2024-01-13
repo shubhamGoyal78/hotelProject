@@ -94,7 +94,7 @@ const Payment = () => {
         throw new Error(`HTTP error! status: ${bookingResponse.status}`);
       }
   
-      const booking = await bookingResponse.json();
+    await bookingResponse.json();
   
       // Now that the booking is created, proceed to payment
       const orderResponse = await fetch('http://localhost:5000/api/razorpay', {
@@ -132,7 +132,17 @@ const Payment = () => {
           alert(response.razorpay_order_id);
           alert(response.razorpay_signature);
           // Navigate to success page or do whatever you want
-          navigate('/success', { state: { bookingId: booking.bookingId } });
+          navigate('/my-booking', { 
+            state: { 
+              bookingDetails: {
+                roomName: bookingData.selectedRoom,
+                roomImage: roomImageMap[bookingData.selectedRoom],
+                name: bookingData.userName,
+                price: bookingData.price,
+                date: `${bookingData.startDate.toDateString()} - ${bookingData.endDate.toDateString()}`
+              }
+            } 
+          });
         },
         prefill: {
           name: bookingData.userName,
