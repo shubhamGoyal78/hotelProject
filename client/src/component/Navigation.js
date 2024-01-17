@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 import logo from '../images/logo.png';
@@ -7,12 +7,19 @@ import { AuthContext } from '../AuthContext';
 
 const Navigation = () => {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
+  const [username, setUsername] = useState(null);
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    localStorage.removeItem('isLoggedIn'); // Remove login state from localStorage
+    sessionStorage.removeItem('isLoggedIn'); // Remove login state from sessionStorage
     // Clear any stored authentication tokens or user data here
   };
+
+  useEffect(() => {
+    let data = sessionStorage.getItem('user');
+    let userData = JSON.parse(data);
+    setUsername(userData.name.toUpperCase())
+  },[])
 
   return (
     <nav className="navbar">
@@ -44,7 +51,8 @@ const Navigation = () => {
   ) : (
     <button onClick={handleLogout} className='btn btn-sm'>
       <img src={userIcon} alt="User Icon" className="user-icon" />
-      <span className="btn-text">Logout</span>
+      
+      <span className="btn-text">{username} Logout</span>
     </button>
   )}
 </div>

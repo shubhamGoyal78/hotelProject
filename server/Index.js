@@ -114,7 +114,7 @@
       });
 
       if (user && user.password === password) {
-        res.json({ message: 'Login successful' });
+        res.json({ message: 'Login successful', data: user });
       } else {
         res.status(400).json({ message: 'Invalid username or password' });
       }

@@ -21,9 +21,10 @@ const Login = () => {
         identifier,
         password,
       });
-      console.log(response.data.message);
+      console.log(response.data);
       setIsLoggedIn(true); // Update login state using context
-      localStorage.setItem('isLoggedIn', 'true'); // Set login state in localStorage
+      sessionStorage.setItem('isLoggedIn', 'true'); // Set login state in sessionStorage
+      sessionStorage.setItem('user', JSON.stringify(response.data.data)); // Set login state in sessionStorage
       navigate("/"); // Navigate to home page or dashboard as per your application flow
     } catch (error) {
       console.error("Login failed:", error);

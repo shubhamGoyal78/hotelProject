@@ -4,12 +4,12 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(
-    () => localStorage.getItem('isLoggedIn') === 'true'
+    () => sessionStorage.getItem('isLoggedIn') === 'true'
   );
 
-  // Update localStorage when isLoggedIn changes
+  // Update sessionStorage when isLoggedIn changes
   useEffect(() => {
-    localStorage.setItem('isLoggedIn', isLoggedIn);
+    sessionStorage.setItem('isLoggedIn', isLoggedIn);
   }, [isLoggedIn]);
 
   return (

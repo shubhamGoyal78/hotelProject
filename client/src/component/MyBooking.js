@@ -9,17 +9,17 @@ const MyBooking = () => {
   // Define a state for booking details
   const [bookingDetails, setBookingDetails] = useState(locationBookingDetails);
 
-  // Save booking details to localStorage
+  // Save booking details to sessionStorage
   useEffect(() => {
     if (bookingDetails) {
-      localStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
+      sessionStorage.setItem('bookingDetails', JSON.stringify(bookingDetails));
     }
   }, [bookingDetails]);
 
-  // Retrieve booking details from localStorage
+  // Retrieve booking details from sessionStorage
   useEffect(() => {
     if (!bookingDetails) {
-      const storedBookingDetails = localStorage.getItem('bookingDetails');
+      const storedBookingDetails = sessionStorage.getItem('bookingDetails');
       if (storedBookingDetails) {
         // Parse the stored JSON string and update the state
         setBookingDetails(JSON.parse(storedBookingDetails));
