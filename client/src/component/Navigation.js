@@ -17,9 +17,14 @@ const Navigation = () => {
 
   useEffect(() => {
     let data = sessionStorage.getItem('user');
-    let userData = JSON.parse(data);
-    setUsername(userData.name.toUpperCase())
-  },[])
+    if (data) {
+      let userData = JSON.parse(data);
+      if (userData && userData.name) {
+        setUsername(userData.name.toUpperCase());
+      }
+    }
+  }, []);
+  
 
   return (
     <nav className="navbar">
